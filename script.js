@@ -247,10 +247,10 @@ const LANG_KEY = 'shanten_lang';
    ========================================================= */
 const I18N = {
   en: {
-    'page.title': '1-shanten Push/Fold Trainer',
+    'page.title': '1-shanten Push/Pull Trainer',
 
     'home.heading': '1-shanten',
-    'home.sub': 'Push/Fold Trainer',
+    'home.sub': 'Push/Pull Trainer',
     'home.start': 'Start',
     'home.hint': '↑ ↓ to choose · Enter to start',
     'home.about': 'About this app',
@@ -259,7 +259,7 @@ const I18N = {
     'home.mode.zen.title': 'Zen Mode',
     'home.mode.zen.desc': 'Endless practice. No timer, no score — just reps.',
     'home.mode.timeattack.title': 'Time Attack',
-    'home.mode.timeattack.desc': '45s countdown. Correct push/fold buys time. Runs until the clock hits zero.',
+    'home.mode.timeattack.desc': '45s countdown. Correct push/pull buys time. Runs until the clock hits zero.',
     'home.mode.custom.title': 'Custom Practice',
     'home.mode.custom.desc': 'Endless practice with hand-picked categories, turns, shapes, seatings, roles and length.',
     'home.hs.regular': 'Regular Best',
@@ -424,9 +424,9 @@ const I18N = {
 
     'help.title': 'How to Play',
     'help.overview.title': 'Overview',
-    'help.overview.body': "Each question gives you a 1-shanten hand facing an opponent's riichi. Answer three questions in sequence to build up to a push/fold decision.",
+    'help.overview.body': "Each question gives you a 1-shanten hand facing an opponent's riichi. Answer three questions in sequence to build up to a push/pull decision.",
     // 'help.modes.title': 'Modes',
-    // 'help.modes.list': '<li><b>Regular</b> — 10-question scored run. Score &amp; grade revealed at the end.</li><li><b>Zen Mode</b> — Endless practice. No score, no timer, no combo.</li><li><b>Time Attack</b> — 45-second countdown. Correct push/fold buys time.</li><li><b>Custom Practice</b> — Configurable length with hand-picked variants. Shows a summary at the end.</li>',
+    // 'help.modes.list': '<li><b>Regular</b> — 10-question scored run. Score &amp; grade revealed at the end.</li><li><b>Zen Mode</b> — Endless practice. No score, no timer, no combo.</li><li><b>Time Attack</b> — 45-second countdown. Correct push/pull buys time.</li><li><b>Custom Practice</b> — Configurable length with hand-picked variants. Shows a summary at the end.</li>',
     'help.step1.title': 'Step 1 — Count Passed Sujis',
     'help.step1.body': "Unique sujis blocked by the riichi player's pond. Post-riichi discards count. No-chance applies when all four copies of a tile are visible.",
     'help.step2.title': 'Step 2 — Estimate Deal-in Rate',
@@ -451,9 +451,9 @@ const I18N = {
     </div>
     `,
     'help.combo.title': 'Combo',
-    'help.combo.body': 'Consecutive correct push/folds build a multiplier: ×1.0 at 0–1, +0.1 per combo past 2, capped at ×10 at combo 91. A wrong push/fold resets the streak.',
+    'help.combo.body': 'Consecutive correct push/pulls build a multiplier: ×1.0 at 0–1, +0.1 per combo past 2, capped at ×10 at combo 91. A wrong push/pull resets the streak.',
     'help.ta.title': 'Time Attack Timing',
-    'help.ta.list': '<li>Correct push/fold: <b>+10s</b> (borderline ×2 on matching push, ×1.5 on matching fold).</li><li>Wrong push: <b>−15s</b> · Wrong fold: <b>−10s</b>.</li>',
+    'help.ta.list': '<li>Correct push/pull: <b>+10s</b> (borderline ×2 on matching push, ×1.5 on matching fold).</li><li>Wrong push: <b>−15s</b> · Wrong fold: <b>−10s</b>.</li>',
     'help.controls.title': 'Controls',
     'help.controls.body': 'Arrow keys navigate, Enter confirms, Escape closes modals / exits to menu.',
     'help.step3.body': "Look up your hand's <b>threshold value</b> (T) from the tables, based on your role (dealer / non-dealer), hand state (closed / open), turn, and hand <b>tier</b>. Tier comes from your hand's shape, yaku, and dora count.",
@@ -499,14 +499,14 @@ const I18N = {
     'results.timeBonus': 'Time Bonus',
     'results.suji': 'Suji Accuracy',
     'results.dealin': 'Deal-in Accuracy',
-    'results.pushfold': 'Push/Fold Accuracy',
+    'results.pushfold': 'Push/Pull Accuracy',
     'results.maxCombo': 'Max Combo',
     'results.playAgain': 'Play Again',
     'results.menu': 'Back to Menu',
 
     'about.title': 'About',
     'about.overviewTitle': 'Overview',
-    'about.p1': "A training tool for mastering push/fold decisions in Riichi Mahjong. Every question presents a 1-shanten hand facing an opponent's riichi, guiding you through a structured three-step process: count the passed suji, estimate the deal-in rate, and compare it against your hand's deal-in threshold.",
+    'about.p1': "A training tool for mastering push/pull decisions in Riichi Mahjong. Every question presents a 1-shanten hand facing an opponent's riichi, guiding you through a structured three-step process: count the passed suji, estimate the deal-in rate, and compare it against your hand's deal-in threshold.",
     'about.creditsTitle': 'Credits',
     'about.p2': "Designed and built by kakino_tea. ",
     'about.sourcesTitle': 'Sources',
@@ -664,9 +664,9 @@ const I18N = {
     'panel.shapeTier.menzenND': '門前・子',
     'panel.shapeTier.menzenD': '門前・親',
     'panel.shapeTier.fuuroNDC': '副露・子・上家リーチ',
-    'panel.shapeTier.fuuroNDNC': '副露・子・非上家',
+    'panel.shapeTier.fuuroNDNC': '副露・子・非上家リーチ',
     'panel.shapeTier.fuuroDC': '副露・親・上家リーチ',
-    'panel.shapeTier.fuuroDNC': '副露・親・非上家',
+    'panel.shapeTier.fuuroDNC': '副露・親・非上家リーチ',
 
     'panel.thresh.menzenVsND': '門前・子相手',
     'panel.thresh.menzenVsD': '門前・親相手',
@@ -676,10 +676,10 @@ const I18N = {
     'panel.thresh.fuuroAsD': '副露・親として',
 
     'btn.shape.menzenND': '門前・子',
-    'btn.shape.fuuroNDC': '副露・子・上家',
+    'btn.shape.fuuroNDC': '副露・子・上',
     'btn.shape.menzenD': '門前・親',
     'btn.shape.fuuroND': '副露・子',
-    'btn.shape.fuuroDC': '副露・親・上家',
+    'btn.shape.fuuroDC': '副露・親・上',
     'btn.shape.fuuroD': '副露・親',
 
     'btn.thresh.menzenVsND': '門前vs子',
