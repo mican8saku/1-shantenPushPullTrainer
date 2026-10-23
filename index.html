@@ -54,7 +54,6 @@
         <button class="btn primary big" id="startBtn" data-i18n="home.start">Start</button>
       </div>
       <p class="hint" data-i18n="home.hint">↑ ↓ to choose &nbsp;·&nbsp; Enter to start</p>
-      <!-- <p class="sub" style="position: relative;top: 10px;text-transform: lowercase;">by kakino_tea</p> -->
     </div>
     </div>
   </div>
@@ -88,16 +87,13 @@
             <p class="settings-note" id="turnsNote" data-i18n="settings.note.turn">Select turns to include.</p>
           </div>
 
-          <div class="settings-section">
-            <div class="settings-section-title" data-i18n="settings.shape.title">Shapes</div>
-            <div class="settings-grid settings-grid-3" id="shapeSettings">
-              <label class="chk"><input type="checkbox" data-shape="Perfect"><span data-i18n="settings.shape.perfect">Perfect</span></label>
-              <label class="chk"><input type="checkbox" data-shape="Good*2"><span data-i18n="settings.shape.good2">Good ×2</span></label>
-              <label class="chk"><input type="checkbox" data-shape="Good+Ryankan"><span data-i18n="settings.shape.goodRyankan">Good + Ryankan</span></label>
-              <label class="chk"><input type="checkbox" data-shape="Bad+Ryankan"><span data-i18n="settings.shape.badRyankan">Bad + Ryankan</span></label>
-              <label class="chk"><input type="checkbox" data-shape="7 Pairs"><span data-i18n="settings.shape.pairs">7 Pairs</span></label>
-            </div>
-            <p class="settings-note" id="shapesNote" data-i18n="settings.note.shape">Select shapes to include.</p>
+          <div class="settings-grid settings-grid-3" id="shapeSettings">
+            <label class="chk"><input type="checkbox" data-shape="Perfect"><span data-i18n="settings.shape.perfect">[A] Perfect</span></label>
+            <label class="chk"><input type="checkbox" data-shape="Good*2"><span data-i18n="settings.shape.good2">[B] Ryanmen ×2</span></label>
+            <label class="chk"><input type="checkbox" data-shape="Good+Ryankan"><span data-i18n="settings.shape.goodRyankan">[C] Ryanmen + Ryankan</span></label>
+            <label class="chk"><input type="checkbox" data-shape="Good+Kanchan"><span data-i18n="settings.shape.goodKanchan">[D] Ryanmen + Kanchan</span></label>
+            <label class="chk"><input type="checkbox" data-shape="Bad+Ryankan"><span data-i18n="settings.shape.badRyankan">[E] Kanchan + Ryankan</span></label>
+            <label class="chk"><input type="checkbox" data-shape="7 Pairs"><span data-i18n="settings.shape.pairs">[F] 7 Pairs</span></label>
           </div>
 
           <div class="settings-section">
@@ -287,7 +283,7 @@
         <h3 data-i18n="about.overviewTitle">Overview</h3>
         <p data-i18n="about.p1">A training tool for the push/fold decision in riichi mahjong. Every question shows a 1-shanten hand facing a riichi and walks you through the same three steps: count the passed sujis, estimate the deal-in rate, then compare it against your hand's deal-in threshold values.</p>
         <h3 data-i18n="about.creditsTitle">Credits</h3>
-        <p data-i18n="about.p2">Designed and built by kakino_tea. </p>
+        <p data-i18n="about.p2">Designed and built by kakino_tea. X: @mican8saku</p>
         <h3 data-i18n="about.sourcesTitle">Sources</h3>
         <p data-i18n="about.p3">Shape tiers and Deal-in Threshold tables are adapted from Unimaru(うに丸)'s book covering this topic. Deal-in rate estimates are adapted from Statistical Mahjong Strategy by Miinin. The deal-in rates are rough training estimates and are not exact as they fall into a bucket of 5% so there is bound to be inaccurate especially if you factor in other factors in there too or apply it to a specific concrete discard pond. </p>
       </div>

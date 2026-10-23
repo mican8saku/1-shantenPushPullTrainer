@@ -93,11 +93,11 @@ const CLOSED_TIER_MAP = {
   'Perfect|4': 1,
   'Perfect|3': 2, 'Good*2|4': 2,
   'Perfect|2': 3, 'Good*2|3': 3, 'Good+Ryankan|4': 3,
-  'Perfect|1': 4, 'Good*2|2': 4, 'Good+Ryankan|3': 4,
-  'Good*2|1': 5, 'Good+Ryankan|2': 5, 'Bad+Ryankan|4': 5, '7 Pairs|5': 5,
+  'Perfect|1': 4, 'Good*2|2': 4, 'Good+Ryankan|3': 4, 'Good+Kanchan|4': 4,
+  'Good*2|1': 5, 'Good+Ryankan|2': 5, 'Bad+Ryankan|4': 5, 'Good+Kanchan|3': 5, '7 Pairs|5': 5,
   'Bad+Ryankan|3': 6, '7 Pairs|4': 6,
-  'Good+Ryankan|1': 7, 'Bad+Ryankan|2': 7, '7 Pairs|3': 7,
-  'Bad+Ryankan|1': 8
+  'Good+Ryankan|1': 7, 'Good+Kanchan|2': 7, 'Bad+Ryankan|2': 7, '7 Pairs|3': 7,
+  'Good+Kanchan|1': 8, 'Bad+Ryankan|1': 8
 };
 
 const CHIITOI_POINTS = {
@@ -107,46 +107,47 @@ const CHIITOI_POINTS = {
 
 const OPEN_TIER_MAP_ND_C = {
   'Perfect|4': 1, 'Good*2|4': 2,
-  'Perfect|3': 3, 'Good+Ryankan|4': 3, 'Good*2|3': 4,
-  'Perfect|2': 5, 'Good+Ryankan|3': 5, 'Bad+Ryankan|4': 5,
+  'Perfect|3': 3, 'Good+Ryankan|4': 3, 'Good+Kanchan|4': 4, 'Good*2|3': 4,
+  'Perfect|2': 5, 'Good+Ryankan|3': 5, 'Good+Kanchan|3': 6, 'Bad+Ryankan|4': 5,
   'Perfect|1': 6, 'Good*2|2': 6,
-  'Good*2|1': 7, 'Good+Ryankan|2': 7, 'Bad+Ryankan|3': 7,
-  'Good+Ryankan|1': 8, 'Bad+Ryankan|2': 9, 'Bad+Ryankan|1': 10
+  'Good*2|1': 7, 'Good+Ryankan|2': 7, 'Good+Kanchan|2': 8, 'Bad+Ryankan|3': 7,
+  'Good+Ryankan|1': 8, 'Good+Kanchan|1': 9, 'Bad+Ryankan|2': 9, 'Bad+Ryankan|1': 10
 };
 
 const OPEN_TIER_MAP_ND_NC = {
   'Perfect|4': 2, 'Good*2|4': 3,
-  'Perfect|3': 4, 'Good+Ryankan|4': 4, 'Good*2|3': 5,
+  'Perfect|3': 4, 'Good+Ryankan|4': 4, 'Good*2|3': 5, 'Good+Kanchan|4': 5,
   'Perfect|2': 6, 'Good+Ryankan|3': 6, 'Bad+Ryankan|4': 6,
-  'Perfect|1': 7, 'Good*2|2': 7,
+  'Perfect|1': 7, 'Good*2|2': 7, 'Good+Kanchan|3': 7,
   'Good*2|1': 8, 'Good+Ryankan|2': 8, 'Bad+Ryankan|3': 8,
-  'Good+Ryankan|1': 9, 'Bad+Ryankan|2': 10, 'Bad+Ryankan|1': 10
+  'Good+Ryankan|1': 9, 'Good+Kanchan|2': 9, 'Good+Kanchan|1': 10, 'Bad+Ryankan|2': 10, 'Bad+Ryankan|1': 10
 };
 
 const OPEN_TIER_MAP_D_C = {
   'Perfect|4': 1, 'Good*2|4': 2,
-  'Perfect|3': 3, 'Good+Ryankan|4': 3, 'Good*2|3': 4,
+  'Perfect|3': 3, 'Good+Ryankan|4': 3, 'Good*2|3': 4, 'Good+Kanchan|4': 4,
   'Perfect|2': 5, 'Good+Ryankan|3': 5, 'Bad+Ryankan|4': 5,
-  'Perfect|1': 6, 'Good*2|2': 6,
-  'Good*2|1': 8, 'Good+Ryankan|2': 8, 'Bad+Ryankan|3': 8,
-  'Good+Ryankan|1': 9, 'Bad+Ryankan|2': 10, 'Bad+Ryankan|1': 11
+  'Perfect|1': 6, 'Good*2|2': 6, 'Good+Kanchan|3': 6,
+  'Good*2|1': 8, 'Good+Ryankan|2': 8, 'Good+Kanchan|2': 9, 'Bad+Ryankan|3': 8,
+  'Good+Ryankan|1': 9, 'Good+Kanchan|1': 10, 'Bad+Ryankan|2': 10, 'Bad+Ryankan|1': 11
 };
 
 const OPEN_TIER_MAP_D_NC = {
   'Perfect|4': 2, 'Good*2|4': 3,
-  'Perfect|3': 4, 'Good+Ryankan|4': 4, 'Good*2|3': 5,
+  'Perfect|3': 4, 'Good+Ryankan|4': 4, 'Good*2|3': 5, 'Good+Kanchan|4': 5,
   'Perfect|2': 6,
   'Good+Ryankan|3': 7, 'Bad+Ryankan|4': 7,
-  'Perfect|1': 8, 'Good*2|2': 8,
+  'Perfect|1': 8, 'Good*2|2': 8, 'Good+Kanchan|3': 8,
   'Good*2|1': 9, 'Good+Ryankan|2': 9, 'Bad+Ryankan|3': 9,
-  'Good+Ryankan|1': 10, 'Bad+Ryankan|2': 11
+  'Good+Ryankan|1': 10, 'Good+Kanchan|2': 10, 'Good+Kanchan|1': 11, 'Bad+Ryankan|2': 11
 };
 
 const SHAPE_LABELS = {
   'Perfect': 'Perfect',
-  'Good*2': 'Good ×2',
-  'Good+Ryankan': 'Good + Ryankan',
-  'Bad+Ryankan': 'Bad + Ryankan',
+  'Good*2': 'Ryanmen ×2',
+  'Good+Ryankan': 'Ryanmen + Ryankan',
+  'Good+Kanchan': 'Ryanmen + Kanchan',
+  'Bad+Ryankan': 'Kanchan + Ryankan',
   '7 Pairs': '7 Pairs'
 };
 
@@ -154,17 +155,20 @@ const SHAPE_LABEL_KEYS = {
   'Perfect': 'settings.shape.perfect',
   'Good*2': 'settings.shape.good2',
   'Good+Ryankan': 'settings.shape.goodRyankan',
+  'Good+Kanchan': 'settings.shape.goodKanchan',
   'Bad+Ryankan': 'settings.shape.badRyankan',
   '7 Pairs': 'settings.shape.pairs'
 };
 
 const SHAPE_REFERENCE = [
   { nameKey: 'settings.shape.perfect', acceptance: 20, goodRate: '100%',
-    hand: ['1m','2m','3m','6m','7m','8m','2p','2p','3p','2s','2s','7s','8s',] },
+    hand: ['1m','2m','3m','6m','7m','8m','2p','2p','3p','2s','2s','7s','8s'] },
   { nameKey: 'settings.shape.good2', acceptance: 16, goodRate: '100%',
     hand: ['2m','2m','2m','4m','5m','6m','3p','4p','1s','4s','5s','8s','8s'] },
   { nameKey: 'settings.shape.goodRyankan', acceptance: 16, goodRate: '50%',
     hand: ['2m','3m','0m','6m','7m','1p','3p','5p','9p','9p','3z','3z','3z'] },
+  { nameKey: 'settings.shape.goodKanchan', acceptance: 12, goodRate: '33%',
+    hand: ['2m','3m','5m','6m','7m','4p','6p','9p','9p','3z','3z','3z','9s'] },
   { nameKey: 'settings.shape.badRyankan', acceptance: 12, goodRate: '0%',
     hand: ['6m','7m','8m','2p','4p','6p','6p','4s','6s','8s','7z','7z','7z'] },
   { nameKey: 'settings.shape.pairs', acceptance: 9, goodRate: '0%',
@@ -181,7 +185,7 @@ const CATEGORY_INFO = {
 
 const ALL_CATEGORIES = Object.keys(CATEGORY_INFO);
 const ALL_TURNS = [5, 9, 14];
-const ALL_SHAPES = ['Perfect', 'Good*2', 'Good+Ryankan', 'Bad+Ryankan', '7 Pairs'];
+const ALL_SHAPES = ['Perfect', 'Good*2', 'Good+Ryankan', 'Good+Kanchan', 'Bad+Ryankan', '7 Pairs'];
 const ALL_HANDS = ['menzen', 'fuuro'];
 const ALL_DECLARERS = ['kamicha', 'toimen', 'shimocha'];
 const ALL_PLAYER_ROLES = ['Dealer', 'Non-Dealer'];
@@ -291,10 +295,11 @@ const I18N = {
     'settings.turn.9': 'Turn 9',
     'settings.turn.14': 'Turn 14',
     'settings.shape.perfect': '[A] Perfect',
-    'settings.shape.good2': '[B] Good ×2',
-    'settings.shape.goodRyankan': '[C] Good + Ryankan',
-    'settings.shape.badRyankan': '[D] Bad + Ryankan',
-    'settings.shape.pairs': '[E] 7 Pairs',
+    'settings.shape.good2': '[B] Ryanmen ×2',
+    'settings.shape.goodRyankan': '[C] Ryanmen + Ryankan',
+    'settings.shape.goodKanchan': '[D] Ryanmen + Kanchan',
+    'settings.shape.badRyankan': '[E] Kanchan + Ryankan',
+    'settings.shape.pairs': '[F] 7 Pairs',
     'settings.hand.menzen': 'Menzen (Closed)',
     'settings.hand.fuuro': 'Fuuro (Open)',
     'settings.declarer.kamicha': 'Kamicha',
@@ -508,9 +513,9 @@ const I18N = {
     'about.overviewTitle': 'Overview',
     'about.p1': "A training tool for mastering push/pull decisions in Riichi Mahjong. Every question presents a 1-shanten hand facing an opponent's riichi, guiding you through a structured three-step process: count the passed suji, estimate the deal-in rate, and compare it against your hand's deal-in threshold.",
     'about.creditsTitle': 'Credits',
-    'about.p2': "Designed and built by kakino_tea. ",
+    'about.p2': "Designed and built by kakino_tea. X: @mican8saku",
     'about.sourcesTitle': 'Sources',
-    'about.p3': 'Shape tiers and deal-in threshold tables are adapted from Unimaru&#39s book on the topic. Deal-in rate estimates are adapted from <i>Statistical Mahjong Strategy</i> by Miinin. Note that these deal-in rates are rough training approximations grouped into 5% buckets; they are generalized estimates and may vary when applied to specific, concrete discard ponds or other situational factors in practical setting. '
+    'about.p3': 'Shape tiers and deal-in threshold tables are adapted from Unimaru&#39s book on the topic. Note however that the shape tiers have been slightly changed for shape D, E. Shape [D] Ryanmen+Kanchan was not in the original data set for Unimaru&#39s book as there was no data about this shape for SMS so it has been guesstimated afterward interpolating them with appropriate-looking values. Making the D shape tier slightly less reliable than the rest of them so take note. Deal-in rate estimates are adapted from <i>Statistical Mahjong Strategy</i> by Miinin. Note that these deal-in rates are rough training approximations grouped into 5% buckets; they are generalized estimates and may vary when applied to specific, concrete discard ponds or other situational factors in practical setting. '
   },
 
   ja: {
@@ -560,8 +565,9 @@ const I18N = {
     'settings.shape.perfect': '[A] 完全形',
     'settings.shape.good2': '[B] 両面×2',
     'settings.shape.goodRyankan': '[C] 両面＋リャンカン',
-    'settings.shape.badRyankan': '[D] カンチャン＋リャンカン',
-    'settings.shape.pairs': '[E] 七対子',
+    'settings.shape.goodKanchan': '[D] 両面＋カンチャン',
+    'settings.shape.badRyankan': '[E] カンチャン＋リャンカン',
+    'settings.shape.pairs': '[F] 七対子',
     'settings.hand.menzen': '門前',
     'settings.hand.fuuro': '副露',
     'settings.declarer.kamicha': '上家',
@@ -775,9 +781,9 @@ const I18N = {
     'about.overviewTitle': '概要',
     'about.p1': '立直麻雀における押し引きの判断力を鍛えるためのトレーニングツールです。出題されるすべての問題は、相手の立直に対して1向聴（イーシャンテン）の手牌から始まり、「スジの通過本数を確認する」「放銃率を推測する」「手牌の閾値と比較する」という3つのステップを通じて、体系的に判断力を養うことができます。',
     'about.creditsTitle': 'クレジット',
-    'about.p2': '制作・開発：kakino_tea',
+    'about.p2': '制作・開発：kakino_tea X: @mican8saku',
     'about.sourcesTitle': '参考文献',
-    'about.p3': '牌効率・形テンのティアおよび押し引きの閾値テーブルは、うに丸氏の関連書籍を基に構成されています。また、放銃率の推定値はみーにん氏の『統計学のマージャン戦術』を参考にしています。なお、これらの放銃率は5%刻みのバケツ（区切り）で算出された大まかな学習用のものであり、実際の具体的な河の状況やその他の要因によっては数値が異なる場合があります。'
+    'about.p3': '形のティア表および押し引きのボーダー放銃率表は、うに丸氏の関連書籍を基に構成されています。[D] 両面+カンチャンのティアに元々表に含まれてなくて、見積もって追加しています。この形だけ信頼度は弱点下がります。 また、放銃率の推定値はみーにん氏の『統計学のマージャン戦術』を参考にしています。なお、これらの放銃率は5%刻みのバケツ（区切り）で算出された大まかな学習用のものであり、実際の具体的な河の状況やその他の要因によっては数値が異なる場合があります。'
   }
 };
 
@@ -1220,12 +1226,12 @@ function lookupRate(category, sujiCount) {
    DISCARD WEIGHTING
    ========================================================= */
 function tileWeightsForPosition(i) {
-  if (i < 2)  return { honor: 10,  term: 5.5, e28: 1.2, mid: 0.4 };
-  if (i < 3)  return { honor: 5.5, term: 6,   e28: 2,   mid: 0.8 };
-  if (i < 5)  return { honor: 3,   term: 7.5, e28: 2.5, mid: 1   };
-  if (i < 9)  return { honor: 2.5, term: 6.5, e28: 4,   mid: 3   };
-  if (i < 13) return { honor: 1.5, term: 5,   e28: 5,   mid: 5   };
-  return       { honor: 1,   term: 4.5, e28: 4, mid: 6 };
+  if (i < 2)  return { honor: 10,  term: 6.5, e28: 1.0, mid: 0.25 };
+  if (i < 3)  return { honor: 8.0, term: 10.0,   e28: 2.0,   mid: 0.5 };
+  if (i < 5)  return { honor: 6.5,   term: 6.5, e28: 5.0, mid: 2.0   };
+  if (i < 9)  return { honor: 5.0, term: 5.5, e28: 10,   mid: 3.0   };
+  if (i < 13) return { honor: 3.5, term: 4.0,   e28: 6.5,   mid: 4.5   };
+  return       { honor: 4.0,   term: 4.0, e28: 6.5, mid: 5.5 };
 }
 
 function pickWeightedTile(counts, position) {
@@ -1387,7 +1393,7 @@ function computeShapeTierData(config) {
     : (config.isDealer ? {1:2000, 2:3900, 3:7700, 4:12000} : {1:1300, 2:2600, 3:5200, 4:8000});
   const chiitoiPts = config.isDealer ? CHIITOI_POINTS.dealer : CHIITOI_POINTS.nonDealer;
   const maxTier = config.isOpen ? 11 : 8;
-  const shapes = ['Perfect', 'Good*2', 'Good+Ryankan', 'Bad+Ryankan', '7 Pairs'];
+  const shapes = ['Perfect', 'Good*2', 'Good+Ryankan', 'Good+Kanchan', 'Bad+Ryankan', '7 Pairs'];
   const cells = {};
   for (let tier = 1; tier <= maxTier; tier++) {
     cells[tier] = {};
@@ -1756,14 +1762,15 @@ function renderShapeTierPanel() {
 
   let html = `<table class="thresh-table"><thead><tr><th>${t('game.panel.tier')}</th>`;
   data.shapes.forEach(s => {
-    let label = s;
-    if (s === 'Perfect') label = 'A';
-    else if (s === 'Good*2') label = 'B';
-    else if (s === 'Good+Ryankan') label = 'C';
-    else if (s === 'Bad+Ryankan') label = 'D';
-    else if (s === '7 Pairs') label = 'E';
-    html += `<th>${label}</th>`;
-  });
+  let label = s;
+  if (s === 'Perfect') label = 'A';
+  else if (s === 'Good*2') label = 'B';
+  else if (s === 'Good+Ryankan') label = 'C';
+  else if (s === 'Good+Kanchan') label = 'D';
+  else if (s === 'Bad+Ryankan') label = 'E';
+  else if (s === '7 Pairs') label = 'F';
+  html += `<th>${label}</th>`;
+});
   html += '</tr></thead><tbody>';
 
   for (const row of data.rows) {
