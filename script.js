@@ -1832,7 +1832,7 @@ function shapeTileEl(name) {
   const wrap = document.createElement('div');
   wrap.className = 'shape-tile';
   const img = document.createElement('img');
-  img.src = `./tiles/${name}.png`;
+  img.src = `./tiles/${name}.webp`;
   img.alt = name;
   img.draggable = false;
   img.onerror = () => {
@@ -2013,7 +2013,7 @@ function tileEl(name, rotated) {
   const div = document.createElement('div');
   div.className = 'tile' + (rotated ? ' rotated' : '');
   const img = document.createElement('img');
-  img.src = `./tiles/${name}.png`;
+  img.src = `./tiles/${name}.webp`;
   img.alt = name;
   img.draggable = false;
   img.onerror = () => {
