@@ -290,11 +290,11 @@ const I18N = {
     'settings.turn.5': 'Turn 5',
     'settings.turn.9': 'Turn 9',
     'settings.turn.14': 'Turn 14',
-    'settings.shape.perfect': 'Perfect',
-    'settings.shape.good2': 'Good ×2',
-    'settings.shape.goodRyankan': 'Good + Ryankan',
-    'settings.shape.badRyankan': 'Bad + Ryankan',
-    'settings.shape.pairs': '7 Pairs',
+    'settings.shape.perfect': '[A] Perfect',
+    'settings.shape.good2': '[B] Good ×2',
+    'settings.shape.goodRyankan': '[C] Good + Ryankan',
+    'settings.shape.badRyankan': '[D] Bad + Ryankan',
+    'settings.shape.pairs': '[E] 7 Pairs',
     'settings.hand.menzen': 'Menzen (Closed)',
     'settings.hand.fuuro': 'Fuuro (Open)',
     'settings.declarer.kamicha': 'Kamicha',
@@ -316,14 +316,14 @@ const I18N = {
     'settings.back': 'Back',
     'settings.start': 'Start Practice',
 
-    'game.logo': '1-shanten Push-Pull',
+    'game.logo': '1-shanten Push-Pull Trainer',
     'game.score': 'Score',
     'game.combo': 'Combo',
     'game.dealin': 'Deal-in Rate Reference',
     'game.shapes': 'Shapes',
     'game.exit': 'Exit',
     'game.panel.shapeTiers': 'Shape Tiers',
-    'game.panel.thresholds': 'Thresholds',
+    'game.panel.thresholds': 'Deal-in Thresholds',
     'game.panel.hidden': 'Hidden',
     'game.panel.auto': 'Auto',
     'game.panel.hide': 'Hide',
@@ -367,7 +367,7 @@ const I18N = {
     'catdesc.Musuji 1/9': 'A terminal — A non-suji tile',
 
     'seat.kamicha': 'Kamicha (Left)',
-    'seat.toimen': 'Toimen (Top)',
+    'seat.toimen': 'Toimen (Across)',
     'seat.shimocha': 'Shimocha (Right)',
 
     'role.vsND': 'VS Non-Dealer',
@@ -397,9 +397,9 @@ const I18N = {
     'panel.shapeTier.menzenND': 'Menzen · Non-Dealer',
     'panel.shapeTier.menzenD': 'Menzen · Dealer',
     'panel.shapeTier.fuuroNDC': 'Fuuro · Non-Dealer · Kamicha Riichi',
-    'panel.shapeTier.fuuroNDNC': 'Fuuro · Non-Dealer · NC',
-    'panel.shapeTier.fuuroDC': 'Fuuro · Dealer · Kamicha Riichi',
-    'panel.shapeTier.fuuroDNC': 'Fuuro · Dealer · NC',
+    'panel.shapeTier.fuuroNDNC': 'Fuuro · Non-Dealer · Not Kamicha Riichi',
+    'panel.shapeTier.fuuroDC': 'Fuuro · Dealer Kamicha Riichi',
+    'panel.shapeTier.fuuroDNC': 'Fuuro · Dealer · Not Kamicha Riichi',
 
     'panel.thresh.menzenVsND': 'Menzen · VS Non-Dealer',
     'panel.thresh.menzenVsD': 'Menzen · VS Dealer',
@@ -409,10 +409,10 @@ const I18N = {
     'panel.thresh.fuuroAsD': 'Fuuro · As Dealer',
 
     'btn.shape.menzenND': 'Menzen as ND',
-    'btn.shape.fuuroNDC': 'Fuuro as ND · Kami Rii',
+    'btn.shape.fuuroNDC': 'Fuuro as ND + Kami Rii',
     'btn.shape.menzenD': 'Menzen as D',
     'btn.shape.fuuroND': 'Fuuro as ND',
-    'btn.shape.fuuroDC': 'Fuuro as D · Kami Rii',
+    'btn.shape.fuuroDC': 'Fuuro as D + Kami Rii',
     'btn.shape.fuuroD': 'Fuuro as D',
 
     'btn.thresh.menzenVsND': 'Menzen vs ND',
@@ -425,8 +425,8 @@ const I18N = {
     'help.title': 'How to Play',
     'help.overview.title': 'Overview',
     'help.overview.body': "Each question gives you a 1-shanten hand facing an opponent's riichi. Answer three questions in sequence to build up to a push/fold decision.",
-    'help.modes.title': 'Modes',
-    'help.modes.list': '<li><b>Regular</b> — 10-question scored run. Score &amp; grade revealed at the end.</li><li><b>Zen Mode</b> — Endless practice. No score, no timer, no combo.</li><li><b>Time Attack</b> — 45-second countdown. Correct push/fold buys time.</li><li><b>Custom Practice</b> — Configurable length with hand-picked variants. Shows a summary at the end.</li>',
+    // 'help.modes.title': 'Modes',
+    // 'help.modes.list': '<li><b>Regular</b> — 10-question scored run. Score &amp; grade revealed at the end.</li><li><b>Zen Mode</b> — Endless practice. No score, no timer, no combo.</li><li><b>Time Attack</b> — 45-second countdown. Correct push/fold buys time.</li><li><b>Custom Practice</b> — Configurable length with hand-picked variants. Shows a summary at the end.</li>',
     'help.step1.title': 'Step 1 — Count Passed Sujis',
     'help.step1.body': "Unique sujis blocked by the riichi player's pond. Post-riichi discards count. No-chance applies when all four copies of a tile are visible.",
     'help.step2.title': 'Step 2 — Estimate Deal-in Rate',
@@ -434,13 +434,36 @@ const I18N = {
     'help.step3.title': 'Step 3 — Push or Fold',
     'help.step3.body': 'Compare tile deal-in rate (R) to hand threshold (T). <b>R ≤ T → PUSH</b>. <b>R &gt; T → FOLD</b>. Borderline buckets accept both.',
     'help.grades.title': 'Grades',
-    'help.grades.body': 'S+ &gt;95% · S 90–95% · S- 85–90% · A+ 80–85% · A 75–80% · A- 70–75% · B+ 65–70% · B 60–65% · B- 55–60% · C 45–55% · D 30–45% · E &lt;30%',
+    'help.grades.body': `
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; font-size: 13px;padding-left:20px;">
+        <div><b>S+</b> &gt; 95%</div>
+        <div><b>B+</b> 65–70%</div>
+        <div><b>S</b> 90–95%</div>
+        <div><b>B</b> 60–65%</div>
+        <div><b>S-</b> 85–90%</div>
+        <div><b>B-</b> 55–60%</div>
+        <div><b>A+</b> 80–85%</div>
+        <div><b>C</b> 45–55%</div>
+        <div><b>A</b> 75–80%</div>
+        <div><b>D</b> 30–45%</div>
+        <div><b>A-</b> 70–75%</div>
+        <div><b>E</b> &lt; 30%</div>
+    </div>
+    `,
     'help.combo.title': 'Combo',
     'help.combo.body': 'Consecutive correct push/folds build a multiplier: ×1.0 at 0–1, +0.1 per combo past 2, capped at ×10 at combo 91. A wrong push/fold resets the streak.',
     'help.ta.title': 'Time Attack Timing',
     'help.ta.list': '<li>Correct push/fold: <b>+10s</b> (borderline ×2 on matching push, ×1.5 on matching fold).</li><li>Wrong push: <b>−15s</b> · Wrong fold: <b>−10s</b>.</li>',
     'help.controls.title': 'Controls',
     'help.controls.body': 'Arrow keys navigate, Enter confirms, Escape closes modals / exits to menu.',
+    'help.step3.body': "Look up your hand's <b>threshold value</b> (T) from the tables, based on your role (dealer / non-dealer), hand state (closed / open), turn, and hand <b>tier</b>. Tier comes from your hand's shape, yaku, and dora count.",
+    'help.step3.list': '<li>If the tile\'s deal-in rate (R) is <b>≤ T</b>: <b>PUSH</b>.</li><li>If R is <b>&gt; T</b>: <b>FOLD</b>.</li><li>If T falls <b>inside the bucket range</b>: <b>BORDERLINE</b> — both answers score 200, and the buttons glow green (slightly favored) or yellow (ambiguous).</li>',
+    
+    'help.scoring.title': 'Scoring',
+    'help.scoring.list': '<li>Step 1: <b>300</b> exact, <b>100</b> off by 1, else 0</li><li>Step 2: <b>300</b> correct, else 0</li><li>Step 3: <b>400</b> correct, <b>200</b> borderline, else 0</li><li>Time bonus: <b>max(0, 200 − seconds × 10)</b></li>',
+    
+    'help.tables.title': 'Reference Tables',
+    'help.tables.list': '<li><b>Deal-in Rates</b> — the full rate chart per category / bucket.</li><li><b>Shapes</b> — examples of the five hand shapes.</li><li><b>Left panel</b> — shape tiers. Toggle <b>Auto</b> to auto-select the matching table each question.</li><li><b>Right panel</b> — threshold values. Same auto behavior.</li>',
 
     'fb.correct': 'Correct!',
     'fb.close': 'Close!',
@@ -483,11 +506,11 @@ const I18N = {
 
     'about.title': 'About',
     'about.overviewTitle': 'Overview',
-    'about.p1': "A training tool for the push/fold decision in riichi mahjong. Every question shows a 1-shanten hand facing a riichi and walks you through the same three steps: count the passed sujis, estimate the deal-in rate, then compare it against your hand's threshold.",
+    'about.p1': "A training tool for mastering push/fold decisions in Riichi Mahjong. Every question presents a 1-shanten hand facing an opponent's riichi, guiding you through a structured three-step process: count the passed suji, estimate the deal-in rate, and compare it against your hand's deal-in threshold.",
     'about.creditsTitle': 'Credits',
-    'about.p2': "Designed and built by kakino_tea. Single-page HTML/CSS/JS app with no backend and no tracking — high scores and custom-practice settings live in your browser's localStorage.",
+    'about.p2': "Designed and built by kakino_tea. ",
     'about.sourcesTitle': 'Sources',
-    'about.p3': 'Threshold tables and deal-in rate estimates are adapted from commonly circulated 押し引き (push/fold) reference charts for riichi mahjong. Rates are training estimates and are not a substitute for table feel. Tile images are loaded from ./tiles/; if an image is missing, a text fallback is drawn instead.'
+    'about.p3': 'Shape tiers and deal-in threshold tables are adapted from Unimaru&#39s book on the topic. Deal-in rate estimates are adapted from <i>Statistical Mahjong Strategy</i> by Miinin. Note that these deal-in rates are rough training approximations grouped into 5% buckets; they are generalized estimates and may vary when applied to specific, concrete discard ponds or other situational factors in practical setting. '
   },
 
   ja: {
@@ -534,11 +557,11 @@ const I18N = {
     'settings.turn.5': '5巡目',
     'settings.turn.9': '9巡目',
     'settings.turn.14': '14巡目',
-    'settings.shape.perfect': 'パーフェクト',
-    'settings.shape.good2': 'グッド×2',
-    'settings.shape.goodRyankan': 'グッド＋両嵌',
-    'settings.shape.badRyankan': 'バッド＋両嵌',
-    'settings.shape.pairs': '七対子',
+    'settings.shape.perfect': '[A] 完全形',
+    'settings.shape.good2': '[B] 両面×2',
+    'settings.shape.goodRyankan': '[C] 両面＋リャンカン',
+    'settings.shape.badRyankan': '[D] カンチャン＋リャンカン',
+    'settings.shape.pairs': '[E] 七対子',
     'settings.hand.menzen': '門前',
     'settings.hand.fuuro': '副露',
     'settings.declarer.kamicha': '上家',
@@ -560,14 +583,14 @@ const I18N = {
     'settings.back': '戻る',
     'settings.start': '練習開始',
 
-    'game.logo': '1シャンテン 押し引き',
+    'game.logo': 'イーシャンテン 押し引き',
     'game.score': 'スコア',
     'game.combo': 'コンボ',
     'game.dealin': '放銃率の目安',
     'game.shapes': '形',
     'game.exit': '終了',
     'game.panel.shapeTiers': '形ティア',
-    'game.panel.thresholds': '押し引き閾値',
+    'game.panel.thresholds': '押し引きボーダー放銃率',
     'game.panel.hidden': '非表示',
     'game.panel.auto': '自動',
     'game.panel.hide': '隠す',
@@ -610,9 +633,9 @@ const I18N = {
     'catdesc.Katamusuji 4/5/6': '中張牌 — 片スジ',
     'catdesc.Musuji 1/9': '老頭牌 — 無スジ牌',
 
-    'seat.kamicha': '上家 (左)',
-    'seat.toimen': '対面 (上)',
-    'seat.shimocha': '下家 (右)',
+    'seat.kamicha': '上家',
+    'seat.toimen': '対面',
+    'seat.shimocha': '下家',
 
     'role.vsND': '子から',
     'role.vsD': '親から',
@@ -676,15 +699,38 @@ const I18N = {
     'help.step2.title': 'ステップ2 — 放銃率の見積り',
     'help.step2.body': '6つの区分: <code>&lt;5%</code>、<code>5–10%</code>、<code>10–15%</code>、<code>15–20%</code>、<code>20–25%</code>、<code>&gt;25%</code>。',
     'help.step3.title': 'ステップ3 — 押すか降りるか',
-    'help.step3.body': '牌の放銃率(R)と手牌閾値(T)を比較。<b>R ≤ T → 押し</b>。<b>R &gt; T → 降り</b>。境界線の区分ではどちらも正解です。',
+    'help.step3.body': '牌の放銃率(R)と手牌ボーダー放銃率(T)を比較。<b>R ≤ T → 押し</b>。<b>R &gt; T → 降り</b>。境界線の区分ではどちらも正解です。',
     'help.grades.title': 'ランク',
-    'help.grades.body': 'S+ &gt;95% · S 90–95% · S- 85–90% · A+ 80–85% · A 75–80% · A- 70–75% · B+ 65–70% · B 60–65% · B- 55–60% · C 45–55% · D 30–45% · E &lt;30%',
+    'help.grades.body': `
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; font-size: 13px;padding-left:20px;">
+        <div><b>S+</b> &gt; 95%</div>
+        <div><b>B+</b> 65–70%</div>
+        <div><b>S</b> 90–95%</div>
+        <div><b>B</b> 60–65%</div>
+        <div><b>S-</b> 85–90%</div>
+        <div><b>B-</b> 55–60%</div>
+        <div><b>A+</b> 80–85%</div>
+        <div><b>C</b> 45–55%</div>
+        <div><b>A</b> 75–80%</div>
+        <div><b>D</b> 30–45%</div>
+        <div><b>A-</b> 70–75%</div>
+        <div><b>E</b> &lt; 30%</div>
+    </div>
+    `,
     'help.combo.title': 'コンボ',
     'help.combo.body': '押し引きを連続で正解すると倍率が上がります：0〜1で×1.0、2以降は1コンボごとに+0.1、91コンボで×10が上限。間違えるとリセット。',
     'help.ta.title': 'タイムアタックの時間',
     'help.ta.list': '<li>押し引き正解: <b>+10秒</b>（境界線は正解側で×2、×1.5）</li><li>押し間違い: <b>−15秒</b> ・ 降り間違い: <b>−10秒</b></li>',
     'help.controls.title': '操作',
     'help.controls.body': '矢印キーで移動、Enterで決定、Escでモーダルを閉じる／メニューへ戻る。',
+    'help.step3.body': "役職（親・子）、手牌の状態（門前・鳴き）、巡目、および手牌の<b>ティア（段階）</b>に基づいて、表から手牌の<b>閾値（T）</b>を確認します。ティアは手牌の形、役、ドラの数によって決まります。",
+    'help.step3.list': '<li>牌の放銃率（R）が <b>≤ T</b> の場合：<b>押し</b>。</li><li>R が <b>&gt; T</b> の場合：<b>降り</b>。</li><li>T が<b>バケツ（範囲）内</b>に収まる場合：<b>微差</b> — どちらの回答も200点となり、ボタンが緑（わずかに有利）または黄色（曖昧）に光ります。</li>',
+
+    'help.scoring.title': '得点システム',
+    'help.scoring.list': '<li>ステップ1：正解で <b>300</b>、±1のズレで <b>100</b>、その他 0</li><li>ステップ2：正解で <b>300</b>、その他 0</li><li>ステップ3：正解で <b>400</b>、微差で <b>200</b>、その他 0</li><li>タイムボーナス：<b>max(0, 200 − 秒数 × 10)</b></li>',
+
+    'help.tables.title': '参考テーブル',
+    'help.tables.list': '<li><b>放銃率</b> — カテゴ/バケツごとの全体レート表。</li><li><b>形</b> — 5つの手牌の形の例。</li><li><b>左パネル</b> — 形のティア。<b>Auto</b>をオンにすると、問題ごとに一致する表が自動選択されます。</li><li><b>右パネル</b> — 閾値。同様に自動選択されます。</li>',
 
     'fb.correct': '正解！',
     'fb.close': 'おしい！',
@@ -700,14 +746,14 @@ const I18N = {
     'fb.step3.bad': '<b>不正解。</b>',
     'fb.step3.answerIs': '正解は <b>{d}</b> です。',
     'fb.step3.borderline': '<b>境界線！</b> {d} を選択。{lean}',
-    'fb.step3.borderlineDetail': '推定範囲: <b>{b}</b> ・ 手牌閾値（ティア {tier}, {role}）: <b>{t}</b>',
-    'fb.step3.detail': '通ったスジ: <b>{n}</b> ・ 牌の放銃率: <b>{b}</b> ・ 手牌閾値（ティア {tier}, {role}）: <b>{t}</b>',
-    'fb.step3.comparePush': '放銃率 ≤ 閾値 → 押し',
-    'fb.step3.compareFold': '放銃率 > 閾値 → 降り',
+    'fb.step3.borderlineDetail': '推定範囲: <b>{b}</b> ・ 手牌ボーダー放銃率（ティア {tier}, {role}）: <b>{t}</b>',
+    'fb.step3.detail': '通ったスジ: <b>{n}</b> ・ 牌の放銃率: <b>{b}</b> ・ 手牌ボーダー放銃率（ティア {tier}, {role}）: <b>{t}</b>',
+    'fb.step3.comparePush': '放銃率 ≤ ボーダー放銃率 → 押し',
+    'fb.step3.compareFold': '放銃率 > ボーダー放銃率 → 降り',
     'fb.step3.all': '全て（常に押し）',
-    'fb.lean.fold': '閾値は範囲の下端寄り — <b>降り</b>がやや有利。',
-    'fb.lean.push': '閾値は範囲の上端寄り — <b>押し</b>がやや有利。',
-    'fb.lean.both': '閾値は範囲の中ほど — どちらとも言えない。',
+    'fb.lean.fold': 'ボーダー放銃率は範囲の下端寄り — <b>降り</b>がやや有利。',
+    'fb.lean.push': 'ボーダー放銃率は範囲の上端寄り — <b>押し</b>がやや有利。',
+    'fb.lean.both': 'ボーダー放銃率は範囲の中ほど — どちらとも言えない。微差な選択。',
     'fb.ta.pts': '+{pts}点',
     'fb.ta.mult': ' (×{mult})',
     'fb.ta.plusSec': ' ・+{s}秒',
@@ -727,11 +773,11 @@ const I18N = {
 
     'about.title': 'このアプリについて',
     'about.overviewTitle': '概要',
-    'about.p1': 'リーチ麻雀の押し引き判断を鍛えるトレーナーです。各問題では1シャンテンの手牌とリーチ者の捨て牌が表示され、（1）通ったスジを数え、（2）打牌の放銃率を見積もり、（3）手牌の閾値と比較して押すか降りるかを判断します。',
+    'about.p1': '立直麻雀における押し引きの判断力を鍛えるためのトレーニングツールです。出題されるすべての問題は、相手の立直に対して1向聴（イーシャンテン）の手牌から始まり、「スジの通過本数を確認する」「放銃率を推測する」「手牌の閾値と比較する」という3つのステップを通じて、体系的に判断力を養うことができます。',
     'about.creditsTitle': 'クレジット',
-    'about.p2': '制作：kakino_tea。単一のHTML/CSS/JSアプリで、サーバーもトラッキングもありません。スコアとカスタム練習の設定はブラウザの localStorage に保存されます。',
-    'about.sourcesTitle': '出典',
-    'about.p3': '閾値表と放銃率の推定値は、麻雀で広く使われている押し引きの参考表を基に調整しています。あくまで練習用の推定値であり、実戦の感覚の代わりにはなりません。牌画像は ./tiles/ から読み込み、見つからない場合は文字で代替表示します。'
+    'about.p2': '制作・開発：kakino_tea',
+    'about.sourcesTitle': '参考文献',
+    'about.p3': '牌効率・形テンのティアおよび押し引きの閾値テーブルは、うに丸氏の関連書籍を基に構成されています。また、放銃率の推定値はみーにん氏の『統計学のマージャン戦術』を参考にしています。なお、これらの放銃率は5%刻みのバケツ（区切り）で算出された大まかな学習用のものであり、実際の具体的な河の状況やその他の要因によっては数値が異なる場合があります。'
   }
 };
 
@@ -1711,10 +1757,11 @@ function renderShapeTierPanel() {
   let html = `<table class="thresh-table"><thead><tr><th>${t('game.panel.tier')}</th>`;
   data.shapes.forEach(s => {
     let label = s;
-    if (s === 'Good*2') label = 'Good×2';
-    else if (s === 'Good+Ryankan') label = 'Good+<br>Ryankan';
-    else if (s === 'Bad+Ryankan') label = 'Bad+<br>Ryankan';
-    else if (s === '7 Pairs') label = '7<br>Pairs';
+    if (s === 'Perfect') label = 'A';
+    else if (s === 'Good*2') label = 'B';
+    else if (s === 'Good+Ryankan') label = 'C';
+    else if (s === 'Bad+Ryankan') label = 'D';
+    else if (s === '7 Pairs') label = 'E';
     html += `<th>${label}</th>`;
   });
   html += '</tr></thead><tbody>';
@@ -1839,14 +1886,17 @@ function renderHelpBody() {
   $('helpBody').innerHTML = `
     <h3>${t('help.overview.title')}</h3>
     <p>${t('help.overview.body')}</p>
-    <h3>${t('help.modes.title')}</h3>
-    <ul>${t('help.modes.list')}</ul>
     <h3>${t('help.step1.title')}</h3>
     <p>${t('help.step1.body')}</p>
     <h3>${t('help.step2.title')}</h3>
     <p>${t('help.step2.body')}</p>
     <h3>${t('help.step3.title')}</h3>
     <p>${t('help.step3.body')}</p>
+    <ul>${t('help.step3.list')}</ul>
+    <h3>${t('help.scoring.title')}</h3>
+    <ul>${t('help.scoring.list')}</ul>
+    <h3>${t('help.tables.title')}</h3>
+    <ul>${t('help.tables.list')}</ul>
     <h3>${t('help.grades.title')}</h3>
     <p>${t('help.grades.body')}</p>
     <h3>${t('help.combo.title')}</h3>
@@ -2007,7 +2057,7 @@ function renderBoard(q) {
     lblT.className = 'seat-label';
     lblT.id = 'seatLabelToimen';
     lblT.style.left = '560px';
-    lblT.style.top = '365px';
+    lblT.style.top = '335px';
     lblT.style.transform = 'translate(-50%, -50%) rotate(180deg)';
     lblT.innerHTML = `<span class="wind">${windChar(q.seatWinds.toimen)}</span>${t('board.toimen')}`;
     board.appendChild(lblT);

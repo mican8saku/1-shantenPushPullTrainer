@@ -12,7 +12,6 @@
   <div id="home" class="screen active">
     <img src="long.png" alt="" class="cover-image">
     <img src="long.png" alt="" class="cover-image-flipped">
-    <img src="birb2.png" alt="" class="corner-image">
     <div class="home-topbar">
       <button class="btn" id="langBtn">日本語</button>
       <button class="btn" id="aboutBtn" data-i18n="home.about" style="min-width:145px;">About</button>
@@ -286,11 +285,11 @@
       </div>
       <div class="help-content">
         <h3 data-i18n="about.overviewTitle">Overview</h3>
-        <p data-i18n="about.p1">A training tool for the push/fold decision in riichi mahjong. Every question shows a 1-shanten hand facing a riichi and walks you through the same three steps: count the passed sujis, estimate the deal-in rate, then compare it against your hand's threshold.</p>
+        <p data-i18n="about.p1">A training tool for the push/fold decision in riichi mahjong. Every question shows a 1-shanten hand facing a riichi and walks you through the same three steps: count the passed sujis, estimate the deal-in rate, then compare it against your hand's deal-in threshold values.</p>
         <h3 data-i18n="about.creditsTitle">Credits</h3>
-        <p data-i18n="about.p2">Designed and built by kakino_tea. Single-page HTML/CSS/JS app with no backend and no tracking — high scores and custom-practice settings live in your browser's localStorage.</p>
+        <p data-i18n="about.p2">Designed and built by kakino_tea. </p>
         <h3 data-i18n="about.sourcesTitle">Sources</h3>
-        <p data-i18n="about.p3">Threshold tables and deal-in rate estimates are adapted from commonly circulated 押し引き (push/fold) reference charts for riichi mahjong. Rates are training estimates and are not a substitute for table feel. Tile images are loaded from ./tiles/; if an image is missing, a text fallback is drawn instead.</p>
+        <p data-i18n="about.p3">Shape tiers and Deal-in Threshold tables are adapted from Unimaru(うに丸)'s book covering this topic. Deal-in rate estimates are adapted from Statistical Mahjong Strategy by Miinin. The deal-in rates are rough training estimates and are not exact as they fall into a bucket of 5% so there is bound to be inaccurate especially if you factor in other factors in there too or apply it to a specific concrete discard pond. </p>
       </div>
     </div>
   </div>
